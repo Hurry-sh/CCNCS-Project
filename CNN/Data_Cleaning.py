@@ -11,6 +11,7 @@ d = []
 cls = []
 
 for item in target:
+    print(item)
     payload = os.path.join(folder, item)
     print(f"\nProcessing: {payload}")
 
@@ -44,7 +45,9 @@ print(f"DataFrame before filling NA: {all}")
 all = all.fillna(0)
 all['class'] = cls
 
-print(f"Final DataFrame: {all}")
+# print(f"Final DataFrame: {all}")
+
+print(all)
 
 with gzip.open('CCNCS_Internship/CNN/output_data/output.pickle', 'wb') as f:
     pickle.dump(all, f)

@@ -4,24 +4,27 @@ from collections import Counter
 import operator
 import pickle
 import gzip
-# from keras.preprocessing.sequence import pad_sequences
+from keras.preprocessing.sequence import pad_sequences
 
 
-with gzip.open('CCNCS_Internship/CNN/output_data/output.pickle', 'rb') as f:
+with gzip.open('CCNCS_Internship\\CNN\\output_data\\output.pickle', 'rb') as f:
     data = pickle.load(f)
 
 
 df = data.reset_index(drop=True) 
 X = df.drop(columns=[1,'class']) 
+
 len_cnt =len(X.columns)
 X = X.iloc[:, 0:len_cnt].values
+
+print("len(X) : ",len(X))
 
 cnt = []
 for i in range(0,len(X)):
     all = np.append(all,X[i])
     cnt.append(len(X[i]))
 
-print(df)
+# print("all : " , all)
 
 max_len = int(max(cnt))
 
@@ -33,6 +36,8 @@ all = all.iloc[:, 0].values
 all = list(all)
 all.remove('<built-in function all>')
 all = pd.DataFrame(all)
+
+print(all)
 
 with gzip.open('CCNCS_Internship/CNN/output_data/api_call_word_list.pickle', 'wb') as f:
     pickle.dump(all, f)
@@ -62,7 +67,7 @@ max_seq = max_len
 
 def encoding_and_padding(corp_list, dic, max_seq=max_seq):
     coding_seq = [ [dic.get(j, dic['Uknown']) for j in i]  for i in corp_list ]
-    # return(pad_sequences(coding_seq, maxlen=max_seq, padding='pre', truncating='pre',value=dic['Padding']))
+    return(pad_sequences(coding_seq, maxlen=max_seq, padding='pre', truncating='pre',value=dic['Padding']))
 
 train_x = encoding_and_padding(X, keyword_dict, max_seq=int(max_seq))
 train_y = data['class']
@@ -80,5 +85,7 @@ with gzip.open('CCNCS_Internship/CNN/output_data/keyword_dict.pickle', 'wb') as 
 
 with gzip.open('CCNCS_Internship/CNN/output_data/keyword_rev_dict.pickle', 'wb') as f:
     pickle.dump(keyword_rev_dict, f)
+    
 print(train_x)
-print(train_y)
+# print(train_y)
+print("done")
