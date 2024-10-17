@@ -1,0 +1,27 @@
+{
+    "code_analysis": {
+        "findings": {
+            "android_aar_jar_debug_enabled": {
+                "files": {
+                    "com/termuxhackers/id/BuildConfig.java": "3,4"
+                },
+                "metadata": {
+                    "cvss": 5.4,
+                    "cwe": "CWE-919: Weaknesses in Mobile Applications",
+                    "owasp-mobile": "M1: Improper Platform Usage",
+                    "masvs": "MSTG-RESILIENCE-2",
+                    "ref": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x04c-Tampering-and-Reverse-Engineering.md#debugging-and-tracing",
+                    "description": "Debug configuration enabled. Production builds must not be debuggable.",
+                    "severity": "high"
+                }
+            }
+        },
+        "summary": {
+            "high": 1,
+            "warning": 0,
+            "info": 0,
+            "secure": 0,
+            "suppressed": 0
+        }
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "Hybr1d-Analys1s/theZoo"]
+	path = Hybr1d-Analys1s/theZoo
+	url = git@github.com:ytisf/theZoo.git
