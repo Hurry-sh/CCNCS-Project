@@ -1,5 +1,4 @@
 # CCNCS-Project
-Team number : 10
 
 Topic : Detection of Mobile Malware (ANDROID) using ML and Hybrid Analysis
 
