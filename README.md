@@ -8,7 +8,6 @@ In recent times, malware has increasingly become a significant concern in inform
 
 <img width="1184" height="480" alt="image" src="https://github.com/user-attachments/assets/97e000b0-4311-49e6-a043-e3d666af6317" />
 
-<img width="500" height="140" alt="image" src="https://github.com/user-attachments/assets/bf3011aa-f2de-4444-90f3-be2d9e74d6c6" />
 
 
 
